@@ -3,38 +3,27 @@ def sayitahmin():
 
     print("Bil bakalim kac sayisini tuttum (0-100)?")
     tahmin_sayisi = random.randint(0,100)
-
+    liste = []
 
     while True:
         kullanici = int(input("Tahmin Sayiniz:"))
+        liste.append(kullanici)
+
         if (tahmin_sayisi > kullanici):
-             print("Daha Buyuk!")
+             print("Daha Buyuk!",liste ,"\n")
+        elif (5 == len(liste)):
+            print("Kaybettiniz!\nTuttugum sayi:",tahmin_sayisi,"Sizin tahmin sayilariniz:",liste)
+            break
+
         elif (100 < kullanici):
             print("Lutfen 100'den buyuk sayi girmeyin!")
         elif (tahmin_sayisi < kullanici):
-            print("Daha Kucuk!")
+            print("Daha Kucuk!",liste , "\n")
         elif (tahmin_sayisi == kullanici):
-            print("Tebrikler Bildiniz...")
+            print("Tebrikler Bildiniz..." , len(liste) ," denemede buldunuz.")
             break
 
 
 
-def fordongusu():
-    import random
-    print("Tahmin etme oyunu 0-100")
-    tahmin = random.randint(0,100)
-    al = ""
-
-    for dongu in range(5):
-        al = int(input("Tahmini sayiniz:"))
-        if  (tahmin == al):
-            print("Tebrikelr bildiniz")
-            break
-        elif (tahmin > al):
-            print("Daha buyuk")
-        elif (tahmin < al):
-                print("Daha ufak")
-    if (al != tahmin):
-        print("Kaybettiniz! Tuttugum sayi:", tahmin)
 
 sayitahmin()
